@@ -30,10 +30,16 @@ export default function Hero() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold tracking-widest uppercase"
+            className="flex flex-col sm:flex-row items-center justify-center text-center gap-2 px-4 py-2 sm:py-1.5 rounded-3xl sm:rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-bold tracking-widest uppercase"
           >
-            <Sparkles className="w-4 h-4" />
-            Frontend Engineer · 1+ Year Experience · Open for Opportunities
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 shrink-0" />
+              <span>Frontend Engineer</span>
+            </div>
+            <span className="hidden sm:inline">·</span>
+            <span className="sm:inline">1+ Year Experience</span>
+            <span className="hidden sm:inline">·</span>
+            <span className="sm:inline">Open for Opportunities</span>
           </motion.div>
 
           <div className="space-y-4">
@@ -41,10 +47,10 @@ export default function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight flex flex-col sm:flex-row items-center justify-center sm:gap-4"
             >
               <span className="text-foreground uppercase">MUHAMMAD</span>
-              <span className="text-primary p-2 uppercase">
+              <span className="text-primary uppercase">
                 AREEB
               </span>
             </motion.h1>
@@ -53,7 +59,7 @@ export default function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl mx-auto"
+              className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl mx-auto px-4 sm:px-0"
             >
               Specializing in <span className="text-foreground border-b-2 border-primary/40">React & Next.js</span> to build 
               high performance <span className="text-foreground border-b-2 border-accent/40">web experiences</span>. Over 1 year of experience delivering scalable production grade applications.
