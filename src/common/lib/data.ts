@@ -71,16 +71,6 @@ export const experiencesData = [
     date: 'Dec 2024 – Feb 2025',
   },
   {
-    title: 'Freelance Frontend Developer',
-    location: 'Remote',
-    points: [
-      'Built and deployed 6+ client-facing React SPAs over 14 months, integrating REST APIs and achieving sub-2s load times via Vercel.',
-      'Managed full project lifecycle independently — requirements gathering, UI design, development, and client delivery.',
-    ],
-    icon: React.createElement(BriefcaseBusinessIcon),
-    date: 'Sep 2023 – Nov 2024',
-  },
-  {
     title: 'Frontend Developer (Internship)',
     location: 'Monitr Startup · Hyderabad',
     points: [
