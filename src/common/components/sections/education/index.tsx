@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { GraduationCap, BookOpen, Award, MapPin, Calendar } from 'lucide-react';
+
 import { educationData } from '@/common/lib/data';
 import { useSectionInView } from '@/common/lib/hooks';
 
@@ -9,7 +10,11 @@ export default function Education() {
   const { ref } = useSectionInView('education');
 
   return (
-    <section id="education" ref={ref} className="py-24 bg-background relative overflow-hidden">
+    <section
+      id="education"
+      ref={ref}
+      className="py-24 bg-background relative overflow-hidden"
+    >
       {/* Grid Background */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -35,8 +40,8 @@ export default function Education() {
             Academic Background
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase tracking-tight">
-            EDUCATION 
-           </h2>
+            EDUCATION
+          </h2>
         </motion.div>
 
         {educationData.map((edu, index) => (
@@ -96,13 +101,14 @@ export default function Education() {
                     className="shrink-0 flex flex-col items-center justify-center p-6 rounded-3xl bg-primary/10 border border-primary/20 min-w-[140px]"
                   >
                     <Award className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-3xl font-black text-foreground">{edu.cgpa}</span>
+                    <span className="text-3xl font-black text-foreground">
+                      {edu.cgpa}
+                    </span>
                     <span className="text-[10px] font-black tracking-widest text-muted-foreground uppercase mt-1">
                       CGPA
                     </span>
                   </motion.div>
                 </div>
-
               </div>
             </div>
           </motion.div>

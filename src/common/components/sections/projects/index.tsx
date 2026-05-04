@@ -1,15 +1,16 @@
+'use client';
 
-"use client";
+import React from 'react';
 
-import React from "react";
-import { useSectionInView } from "@/common/lib/hooks";
-import { projectsData } from "@/common/lib/data";
-import Project from "./_components/project";
-import SectionHeading from "@/common/components/shared/section-heading";
-import SectionDivider from "@/common/components/shared/section-divider";
+import SectionDivider from '@/common/components/shared/section-divider';
+import SectionHeading from '@/common/components/shared/section-heading';
+import { projectsData } from '@/common/lib/data';
+import { useSectionInView } from '@/common/lib/hooks';
+
+import Project from './_components/project';
 
 export default function Projects() {
-  const { ref } = useSectionInView("projects", 0.25);
+  const { ref } = useSectionInView('projects', 0.25);
 
   return (
     <section

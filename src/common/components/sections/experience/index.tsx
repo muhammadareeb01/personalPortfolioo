@@ -1,21 +1,26 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
-import { useSectionInView } from '@/common/lib/hooks';
+import React from 'react';
+
 import SectionHeading from '@/common/components/shared/section-heading';
 import { experiencesData } from '@/common/lib/data';
+import { useSectionInView } from '@/common/lib/hooks';
 
 export default function Experience() {
   const { ref } = useSectionInView('experience');
 
   return (
-    <section id="experience" ref={ref} className="py-24 bg-background relative overflow-hidden">
+    <section
+      id="experience"
+      ref={ref}
+      className="py-24 bg-background relative overflow-hidden"
+    >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent hidden md:block" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <SectionHeading>Professional Experience</SectionHeading>
-        
+
         <div className="max-w-5xl mx-auto mt-16 space-y-12">
           {experiencesData.map((item, index) => (
             <motion.div
@@ -32,7 +37,7 @@ export default function Experience() {
               <div className="flex-1 w-full">
                 <div className="p-8 rounded-[2.5rem] bg-card/50 backdrop-blur-xl border border-border hover:border-primary/50 transition-all duration-500 shadow-xl group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
-                  
+
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between gap-4">
                       <div className="p-3 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
@@ -54,7 +59,10 @@ export default function Experience() {
 
                     <ul className="!mt-4 space-y-2">
                       {item.points.map((point, i) => (
-                        <li key={i} className="flex gap-3 text-muted-foreground font-medium leading-relaxed group/item">
+                        <li
+                          key={i}
+                          className="flex gap-3 text-muted-foreground font-medium leading-relaxed group/item"
+                        >
                           <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0 group-hover/item:scale-150 transition-transform" />
                           <span className="text-sm md:text-base">{point}</span>
                         </li>

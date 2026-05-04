@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { BriefcaseBusinessIcon } from 'lucide-react';
+import React from 'react';
 
 export const links = [
   {
@@ -152,20 +151,23 @@ export const skillsData = [
 export const projectsData = [
   {
     title: 'Home Exchange Platform',
-    description: 'Built a full-featured property exchange platform with JWT authentication, protected routing, and real-time chat via Supabase Realtime subscriptions — including live presence indicators and typing status updates. Optimized Supabase query patterns with indexed queries and client-side caching.',
+    description:
+      'Built a full-featured property exchange platform with JWT authentication, protected routing, and real-time chat via Supabase Realtime subscriptions — including live presence indicators and typing status updates. Optimized Supabase query patterns with indexed queries and client-side caching.',
     tags: ['Next.js', 'Supabase Realtime', 'Firebase', 'JWT'],
     githubUrl: 'https://github.com/muhammadareeb01/home-exchange',
     liveUrl: 'https://home-exchange-areeb.vercel.app', // Placeholder or actual if known, I'll use a generic one if not specified
   },
   {
     title: 'Mystery Box E-Commerce',
-    description: 'Engineered a full-stack e-commerce platform with Stripe Checkout and Webhook-driven payment processing, automating product state transitions and inventory syncing. Built admin dashboard with RBAC and sales analytics.',
+    description:
+      'Engineered a full-stack e-commerce platform with Stripe Checkout and Webhook-driven payment processing, automating product state transitions and inventory syncing. Built admin dashboard with RBAC and sales analytics.',
     tags: ['MERN Stack', 'Stripe Checkout', 'Webhooks', 'Redux'],
     githubUrl: 'https://github.com/muhammadareeb01/mystery-box',
   },
   {
     title: 'Full Stack Blog App',
-    description: 'Developed a complete blog system with full CRUD features, image uploads, and JWT authentication. Improved backend efficiency by 30% using optimized MongoDB queries and indexing strategies.',
+    description:
+      'Developed a complete blog system with full CRUD features, image uploads, and JWT authentication. Improved backend efficiency by 30% using optimized MongoDB queries and indexing strategies.',
     tags: ['Next.js', 'MongoDB', 'JWT', 'REST API'],
     githubUrl: 'https://github.com/muhammadareeb01/blog-app',
   },

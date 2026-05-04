@@ -1,22 +1,23 @@
-"use client";
+'use client';
 
-import React from "react";
-import { skillsData } from "@/common/lib/data";
-import { useSectionInView } from "@/common/lib/hooks";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import SectionHeading from "@/common/components/shared/section-heading";
+import { motion } from 'framer-motion';
 import { Code2, Database, ShieldCheck, Zap } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
+
+import SectionHeading from '@/common/components/shared/section-heading';
+import { skillsData } from '@/common/lib/data';
+import { useSectionInView } from '@/common/lib/hooks';
 
 const icons = [
   <Code2 className="w-6 h-6" key="frontend" />,
   <Zap className="w-6 h-6" key="state" />,
   <Database className="w-6 h-6" key="backend" />,
-  <ShieldCheck className="w-6 h-6" key="tools" />
+  <ShieldCheck className="w-6 h-6" key="tools" />,
 ];
 
 export default function Skills() {
-  const { ref } = useSectionInView("skills");
+  const { ref } = useSectionInView('skills');
 
   return (
     <section
@@ -25,13 +26,17 @@ export default function Skills() {
       className="py-24 bg-background relative overflow-hidden"
     >
       {/* Background Accents */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`, backgroundSize: '40px 40px' }} 
+      <div
+        className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
+          backgroundSize: '40px 40px',
+        }}
       />
 
       <div className="container mx-auto px-4 relative z-10">
         <SectionHeading>Technical Expertise</SectionHeading>
-        
+
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
           {skillsData.map((category, categoryIndex) => (
             <motion.div

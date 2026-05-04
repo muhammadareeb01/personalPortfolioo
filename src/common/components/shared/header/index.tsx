@@ -1,9 +1,10 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+
 import { links } from '@/common/lib/data';
 
 export default function Header() {
@@ -14,14 +15,18 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      
+
       // Update active section based on scroll
-      const sections = links.map(link => document.getElementById(link.id));
+      const sections = links.map((link) => document.getElementById(link.id));
       const scrollPosition = window.scrollY + 100;
 
       sections.forEach((section, index) => {
-        if (section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
-           setActiveSection(links[index].id);
+        if (
+          section &&
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          setActiveSection(links[index].id);
         }
       });
     };
@@ -36,7 +41,7 @@ export default function Header() {
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 80,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
@@ -44,17 +49,17 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-4 sm:py-6">
       <div className={`container mx-auto px-4 md:px-6`}>
-        <motion.div 
+        <motion.div
           className={`flex items-center justify-between px-6 py-4 rounded-3xl transition-all duration-500 border ${
-            scrolled 
-            ? 'bg-[#0b1222] border-white/10 shadow-2xl scale-[1.02]' 
-            : 'bg-[#0b1222]/90 border-white/5 shadow-lg'
+            scrolled
+              ? 'bg-[#0b1222] border-white/10 shadow-2xl scale-[1.02]'
+              : 'bg-[#0b1222]/90 border-white/5 shadow-lg'
           }`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
           {/* Logo Section */}
-          <Link 
+          <Link
             href="#home"
             onClick={(e) => smoothScrollTo(e, 'home')}
             className="flex flex-col group relative"
@@ -76,7 +81,9 @@ export default function Header() {
                     href={`#${link.id}`}
                     onClick={(e) => smoothScrollTo(e, link.id)}
                     className={`relative px-3 py-2 text-xs font-black uppercase tracking-wider transition-colors ${
-                      activeSection === link.id ? 'text-primary' : 'text-white/80 hover:text-white'
+                      activeSection === link.id
+                        ? 'text-primary'
+                        : 'text-white/80 hover:text-white'
                     }`}
                   >
                     {link.name}
@@ -94,22 +101,22 @@ export default function Header() {
 
           {/* CTA / Actions */}
           <div className="flex items-center gap-4">
-             <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="hidden sm:flex items-center gap-2 px-6 py-2.5 rounded-2xl bg-primary text-white text-xs font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all"
-              >
-                Connect <ArrowRight className="w-4 h-4" />
-              </motion.a>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden sm:flex items-center gap-2 px-6 py-2.5 rounded-2xl bg-primary text-white text-xs font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all"
+            >
+              Connect <ArrowRight className="w-4 h-4" />
+            </motion.a>
 
-              {/* Mobile Toggle */}
-              <button 
-                className="lg:hidden p-2 text-foreground"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? <X /> : <Menu />}
-              </button>
+            {/* Mobile Toggle */}
+            <button
+              className="lg:hidden p-2 text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X /> : <Menu />}
+            </button>
           </div>
         </motion.div>
       </div>
@@ -136,8 +143,11 @@ export default function Header() {
                 </li>
               ))}
               <li className="pt-4 border-t border-border">
-                <a href="#contact" className="flex items-center justify-between p-4 rounded-2xl bg-primary text-white font-black uppercase tracking-widest">
-                  Let's Talk <ArrowRight />
+                <a
+                  href="#contact"
+                  className="flex items-center justify-between p-4 rounded-2xl bg-primary text-white font-black uppercase tracking-widest"
+                >
+                  Let&apos;s Talk <ArrowRight />
                 </a>
               </li>
             </ul>

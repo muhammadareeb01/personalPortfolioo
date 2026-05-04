@@ -6,7 +6,6 @@ import {
   useTransform,
   AnimatePresence,
 } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
 import {
   Star,
   Quote,
@@ -19,6 +18,7 @@ import {
   CheckCircle2,
   MapPin,
 } from 'lucide-react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
 export default function Testimonials() {
   const sectionRef = useRef(null);
@@ -72,23 +72,25 @@ export default function Testimonials() {
       rating: 5,
       text: 'Muhammad wurde beauftragt, eine komplexe Personaldaten-Seite in ein Prisma-Modell zu integrieren. Dabei lag der Fokus darauf, die Datenstruktur anzupassen, Model-Relationen sicherzustellen und die Funktionen für Speicherung, Abruf, Bearbeitung sowie Aktualisierung zu implementieren. Die Aufgabe wurde mit höchster Präzision und zur vollsten Zufriedenheit abgeschlossen.',
       gradient: 'from-yellow-100 to-orange-100', // Subdued
-    }
+    },
   ];
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setDirection(1);
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const handlePrev = () => {
     setDirection(-1);
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setActiveIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   useEffect(() => {
     const timer = setInterval(handleNext, 6000);
     return () => clearInterval(timer);
-  }, [activeIndex]);
+  }, [handleNext]);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -123,7 +125,9 @@ export default function Testimonials() {
         >
           <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="w-5 h-5 text-primary" />
-            <span className="text-xs font-black tracking-widest text-muted-foreground uppercase">SUCCESS STORIES</span>
+            <span className="text-xs font-black tracking-widest text-muted-foreground uppercase">
+              SUCCESS STORIES
+            </span>
             <Sparkles className="w-5 h-5 text-primary" />
           </div>
           <h2 className="text-5xl sm:text-6xl font-black text-foreground uppercase tracking-tight">
@@ -139,17 +143,46 @@ export default function Testimonials() {
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-32"
         >
           {[
-            { icon: <Users />, number: '15+', label: 'Happy Clients', color: 'primary' },
-            { icon: <Award />, number: '15+', label: 'Projects Done', color: 'accent' },
-            { icon: <TrendingUp />, number: '100%', label: 'Satisfaction', color: 'primary' },
-            { icon: <Star />, number: '5.0', label: 'Avg Rating', color: 'accent' }
+            {
+              icon: <Users />,
+              number: '15+',
+              label: 'Happy Clients',
+              color: 'primary',
+            },
+            {
+              icon: <Award />,
+              number: '15+',
+              label: 'Projects Done',
+              color: 'accent',
+            },
+            {
+              icon: <TrendingUp />,
+              number: '100%',
+              label: 'Satisfaction',
+              color: 'primary',
+            },
+            {
+              icon: <Star />,
+              number: '5.0',
+              label: 'Avg Rating',
+              color: 'accent',
+            },
           ].map((stat, index) => (
-            <div key={index} className="p-6 rounded-3xl bg-card border border-border text-center shadow-sm">
-                <div className={`inline-flex p-3 rounded-2xl bg-muted text-${stat.color} mb-3`}>
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-black text-foreground uppercase">{stat.number}</div>
-                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{stat.label}</div>
+            <div
+              key={index}
+              className="p-6 rounded-3xl bg-card border border-border text-center shadow-sm"
+            >
+              <div
+                className={`inline-flex p-3 rounded-2xl bg-muted text-${stat.color} mb-3`}
+              >
+                {stat.icon}
+              </div>
+              <div className="text-3xl font-black text-foreground uppercase">
+                {stat.number}
+              </div>
+              <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>
@@ -170,7 +203,9 @@ export default function Testimonials() {
               >
                 <div className="relative flex flex-col md:flex-row bg-card border border-border rounded-[3rem] overflow-hidden shadow-2xl">
                   {/* Left Signature Side */}
-                  <div className={`md:w-1/3 p-10 bg-muted flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-border`}>
+                  <div
+                    className={`md:w-1/3 p-10 bg-muted flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-border`}
+                  >
                     <div className="w-24 h-24 rounded-full bg-background flex items-center justify-center text-5xl mb-6 shadow-xl border-4 border-border">
                       {testimonials[activeIndex].image}
                     </div>
@@ -186,15 +221,20 @@ export default function Testimonials() {
                   {/* Right Content Side */}
                   <div className="md:w-2/3 p-10 md:p-14 relative">
                     <Quote className="absolute top-10 right-10 w-20 h-20 text-muted opacity-20 pointer-events-none" />
-                    
+
                     <div className="flex gap-1 mb-8">
-                      {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                      ))}
+                      {[...Array(testimonials[activeIndex].rating)].map(
+                        (_, i) => (
+                          <Star
+                            key={i}
+                            className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                          />
+                        ),
+                      )}
                     </div>
 
                     <p className="text-lg md:text-xl text-foreground font-medium leading-relaxed italic">
-                      "{testimonials[activeIndex].text}"
+                      &quot;{testimonials[activeIndex].text}&quot;
                     </p>
                   </div>
                 </div>
@@ -204,26 +244,28 @@ export default function Testimonials() {
 
           {/* Navigation Controls */}
           <div className="flex justify-center items-center gap-8 mt-16">
-            <button 
+            <button
               onClick={handlePrev}
               className="p-4 rounded-full bg-muted border border-border hover:border-primary transition-colors text-foreground"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            
+
             <div className="flex gap-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? 'w-8 bg-primary shadow-glow shadow-primary/50' : 'w-2 bg-muted'
+                    index === activeIndex
+                      ? 'w-8 bg-primary shadow-glow shadow-primary/50'
+                      : 'w-2 bg-muted'
                   }`}
                 />
               ))}
             </div>
 
-            <button 
+            <button
               onClick={handleNext}
               className="p-4 rounded-full bg-muted border border-border hover:border-primary transition-colors text-foreground"
             >

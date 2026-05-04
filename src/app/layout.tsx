@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+
 import { Montserrat as FontMontserrat } from 'next/font/google';
-import { cn } from '@/common/lib/utils';
-import '@/common/styles/globals.css';
 import { Toaster } from 'react-hot-toast';
-import ActiveSectionContextProvider from '@/common/stores/active-section';
-import { ThemeProvider } from '@/common/theme/theme-provider';
-import Header from '@/common/components/shared/header';
+
 import Footer from '@/common/components/shared/footer';
+import Header from '@/common/components/shared/header';
+import { cn } from '@/common/lib/utils';
+import ActiveSectionContextProvider from '@/common/stores/active-section';
 import { ModeToggle } from '@/common/theme/mode-toggler';
+import { ThemeProvider } from '@/common/theme/theme-provider';
+
+import '@/common/styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'RebelVerse | Portfolio',

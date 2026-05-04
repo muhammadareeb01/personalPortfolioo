@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 
 export default function Footer() {
-
   const socialLinks = [
     {
       icon: <Linkedin className="w-5 h-5" />,
@@ -116,13 +115,19 @@ export default function Footer() {
                 className="flex flex-col mb-6"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="text-2xl font-black tracking-tighter text-white hover:text-primary transition-colors">MUHAMMAD AREEB</span>
-                <span className="text-[10px] font-black tracking-[0.3em] text-primary uppercase leading-none mt-1">Portfolio</span>
+                <span className="text-2xl font-black tracking-tighter text-white hover:text-primary transition-colors">
+                  MUHAMMAD AREEB
+                </span>
+                <span className="text-[10px] font-black tracking-[0.3em] text-primary uppercase leading-none mt-1">
+                  Portfolio
+                </span>
               </motion.div>
 
               {/* Description */}
               <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
-                Specializing in building production-grade web applications with a focus on performance, accessibility, and modern user experiences.
+                Specializing in building production-grade web applications with
+                a focus on performance, accessibility, and modern user
+                experiences.
               </p>
 
               {/* Contact Info */}
@@ -241,9 +246,7 @@ export default function Footer() {
               className="text-center md:text-left"
             >
               <p className="text-gray-400 text-sm flex items-center gap-2 flex-wrap justify-center md:justify-start">
-                <span>
-                  &copy; 2025 Muhammad Areeb. All rights reserved.
-                </span>
+                <span>&copy; 2025 Muhammad Areeb. All rights reserved.</span>
                 {/* <span className="hidden sm:inline">•</span> */}
                 {/* <span className="flex items-center gap-1">
                   Made with
@@ -277,7 +280,6 @@ export default function Footer() {
             </motion.button>
           </div>
         </div>
-
       </div>
 
       {/* Bottom Gradient Line */}
