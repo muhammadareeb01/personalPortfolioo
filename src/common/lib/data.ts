@@ -59,12 +59,12 @@ export const experiencesData = [
     date: 'May 2025 – Aug 2025',
   },
   {
-    title: 'Frontend Developer (Contract)',
+    title: 'Frontend Developer',
     location: 'SoftDips · Karachi',
     points: [
-      'Built a School Management System frontend with multi-role access control (RBAC) using Redux Toolkit.',
-      'Reduced unnecessary component re-renders across the admin dashboard using React.memo and structural refactoring.',
-      'Co-designed Node.js/MongoDB REST API contracts, ensuring frontend state management aligned with API response shapes.',
+      'Developed a School Management System with RBAC supporting 3 user tiers (admin, teacher, student) using Redux Toolkit, enforcing route-level access guards that eliminated unauthorized view access during QA testing.',
+      'Eliminated excessive re-renders across the admin dashboard with React.memo and component restructuring, improving responsiveness for staff managing daily attendance and grade records.',
+      'Built Node.js/MongoDB REST APIs for student records, attendance tracking, and grade management, supporting automated data workflows previously handled manually by staff.',
     ],
     icon: React.createElement(BriefcaseBusinessIcon),
     date: 'Dec 2024 – Feb 2025',

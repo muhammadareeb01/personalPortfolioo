@@ -5,13 +5,9 @@ import {
   ArrowRight,
   Star,
   Sparkles,
-  Github,
-  Linkedin,
-  Mail,
+ 
 } from 'lucide-react';
-import Image from 'next/image';
 
-import SectionDivider from '@/common/components/shared/section-divider';
 import { useSectionInView } from '@/common/lib/hooks';
 import { useActiveSectionContext } from '@/common/stores/active-section';
 
@@ -89,8 +85,8 @@ export default function Hero() {
               <span className="text-foreground border-b-2 border-accent/40">
                 web experiences
               </span>
-              . Around 2 years of experience delivering scalable production grade
-              applications.
+              . Around 2 years of experience delivering scalable production
+              grade applications.
             </motion.p>
           </div>
 
