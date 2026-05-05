@@ -22,7 +22,7 @@ const stats = [
     value: 'Level 2',
     color: 'primary',
   },
-  { icon: <Award />, label: 'EXPERIENCE', value: '1+ YEAR', color: 'accent' },
+  { icon: <Award />, label: 'EXPERIENCE', value: '2 YEARS', color: 'accent' },
 ];
 
 export default function About() {
@@ -62,7 +62,7 @@ export default function About() {
                 {/* Overlay Text */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
                   <span className="text-[10px] font-black tracking-widest text-white/70 uppercase mb-1">
-                    FRONTEND ENGINEER
+                    SOFTWARE DEVELOPER
                   </span>
                   <h3 className="text-xl font-bold text-white uppercase tracking-tight">
                     MUHAMMAD AREEB
@@ -100,7 +100,7 @@ export default function About() {
               </h2>
 
               <p className="text-muted-foreground text-lg font-medium leading-relaxed">
-                I am a results driven Software Developer with over 1 year of
+                I am a results driven Software Developer with around 2 years of
                 experience building scalable web applications. I specialize in
                 the React ecosystem, including Next.js and TypeScript, to
                 deliver high performance user interfaces. Currently open for new

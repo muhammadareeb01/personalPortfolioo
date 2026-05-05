@@ -48,10 +48,10 @@ export default function Hero() {
           >
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 shrink-0" />
-              <span>Frontend Engineer</span>
+              <span>Software Developer</span>
             </div>
             <span className="hidden sm:inline">·</span>
-            <span className="sm:inline">1+ Year Experience</span>
+            <span className="sm:inline">Around 2 Years Experience</span>
             <span className="hidden sm:inline">·</span>
             <span className="sm:inline">Open for Opportunities</span>
           </motion.div>
@@ -81,7 +81,7 @@ export default function Hero() {
               <span className="text-foreground border-b-2 border-accent/40">
                 web experiences
               </span>
-              . Over 1 year of experience delivering scalable production grade
+              . Around 2 years of experience delivering scalable production grade
               applications.
             </motion.p>
           </div>
@@ -115,11 +115,11 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl"
+            className="pt-12 flex flex-wrap justify-center gap-8 md:gap-16 w-full max-w-4xl"
           >
             {[
-              { label: 'EXPERIENCE', value: '1+ YEAR' },
-              { label: 'FREELANCER', value: 'LEVEL 2' },
+              { label: 'EXPERIENCE', value: '2 YEARS' },
+              { label: 'FREELANCE', value: '1 YEAR' },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center space-y-1">
                 <span className="text-3xl font-black text-foreground">
