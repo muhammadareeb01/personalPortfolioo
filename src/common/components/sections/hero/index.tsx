@@ -66,6 +66,14 @@ export default function Hero() {
               <span className="text-foreground uppercase">MUHAMMAD</span>
               <span className="text-primary uppercase">AREEB</span>
             </motion.h1>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.15 }}
+              className="text-primary font-black uppercase tracking-[0.5em] text-sm md:text-base"
+            >
+              Software Developer
+            </motion.p>
 
             <motion.p
               initial={{ y: 20, opacity: 0 }}

@@ -54,8 +54,10 @@ export default function About() {
               <div className="absolute inset-4 rounded-[2.5rem] overflow-hidden shadow-2xl bg-card border-2 border-border group-hover:scale-[1.02] transition-transform duration-500">
                 <Image
                   src="/images/profile.jpg"
-                  alt="Founder Muhammad Areeb"
+                  alt="Muhammad Areeb"
                   fill
+                  priority
+                  unoptimized
                   className="object-cover transition-all duration-700 hover:scale-110"
                 />
 

@@ -34,7 +34,7 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: 'Junior Frontend Engineer',
+    title: 'Junior Web Developer',
     location: 'Raptr · Karachi',
     points: [
       'Owned SSR architecture in Next.js, achieving a Lighthouse PageSpeed score of 86 — boosting page performance through route-level code splitting, lazy loading, and image optimization.',
