@@ -1,12 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  ArrowRight,
-  Star,
-  Sparkles,
- 
-} from 'lucide-react';
+import { ArrowRight, Star, Sparkles } from 'lucide-react';
 
 import { useSectionInView } from '@/common/lib/hooks';
 import { useActiveSectionContext } from '@/common/stores/active-section';
